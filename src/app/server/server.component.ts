@@ -8,7 +8,7 @@ export class Server {
 	id: number = 987633
 	title: string = 'Server';
 	port: number = 2345;
-	status: boolean = true;
+	private status: boolean = true;
 
 	getServerStatus() {
 		this.status = !this.status;
