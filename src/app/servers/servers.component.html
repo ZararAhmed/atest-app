@@ -4,5 +4,5 @@
 <p>Disabled: {{ !allowNewServer }}</p>
 <p [innerHtml]="!allowNewServer" ></p>
 <p>{{ serverCreationStatus }}</p>
-<input (input)="updateServer($event)" />
+<input [(ngModel)]="newServer" />
 <p>{{ newServer }}</p>

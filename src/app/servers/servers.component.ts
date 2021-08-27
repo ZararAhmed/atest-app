@@ -17,9 +17,4 @@ export class Servers {
 	onServerCreated = () => {
 		this.serverCreationStatus = "Server was created";
 	}
-
-	updateServer = (event: any) => {
-		this.newServer = event.target.value;
-	}
-
 }
