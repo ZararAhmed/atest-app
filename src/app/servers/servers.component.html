@@ -6,8 +6,8 @@
 <p>{{ serverCreationStatus }}</p>
 
 <input [(ngModel)]="newServer" />
-<input (input)="updateServer($event)" [value]="newServer"/>
+<!-- <input (input)="updateServer($event)" [value]="newServer"/> -->
+
+<button [disabled]="!allowNewServer" (click)="onServerCreated()" class="d-block btn btn-primary">Add Server</button>
 
 <p>{{ newServer }}</p>
-
-<button [disabled]="!allowNewServer" (click)="onServerCreated()" class="btn btn-primary">Add Server</button>
