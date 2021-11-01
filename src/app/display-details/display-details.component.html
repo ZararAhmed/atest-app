@@ -1,0 +1,9 @@
+<button class="btn btn-primary" (click)="displayEnabled()">Display Details</button>
+
+<p *ngIf='enabled'>Secret Password = tuna</p>
+
+<ul class="list-group">
+  <li class="list-group-item" *ngFor="let count of counts; let i = index"  [ngClass]="{'blue-back': i >= 5}">
+    {{count}}
+  </li>
+</ul>

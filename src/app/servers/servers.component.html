@@ -1,13 +1,15 @@
-<app-server></app-server>
-<app-server></app-server>
+<!-- <app-server></app-server> -->
+<!-- <app-server></app-server> -->
+<!-- <p [innerHtml]="!allowNewServer" ></p> -->
+<!-- <input (input)="updateServer($event)" [value]="serverNames"/> -->
+<!-- <p>{{ serverName }}</p> -->
 
-<p>Disabled: {{ !allowNewServer }}</p>
-<p [innerHtml]="!allowNewServer" ></p>
-<p>{{ serverCreationStatus }}</p>
-
-<input [(ngModel)]="newServer" />
-<!-- <input (input)="updateServer($event)" [value]="newServer"/> -->
-
+<p>Server Creation allowed: {{ allowNewServer ? 'yes' : 'no'}}</p>
+<input [(ngModel)]="serverName" />
 <button [disabled]="!allowNewServer" (click)="onServerCreated()" class="d-block btn btn-primary">Add Server</button>
-
-<p>{{ newServer }}</p>
+<div *ngIf="serverCreationStatus; else noServer">
+  <ol>
+    <app-server *ngFor="let item of serverNames"></app-server>
+  </ol>
+</div>
+<ng-template #noServer ><p>No server created</p></ng-template>

@@ -1,2 +1,8 @@
-<p>{{ 'Server : ' + title }} with id {{id}} is running on port {{ port}}</p>
-<p>{{ 'Server Status: ' + getServerStatus() }}</p>
+<div [ngStyle]="{backgroundColor: getColor()}" class="card" [ngClass]="{online: serverStatus === 'online'}" style="width: 18rem;">
+  <img class="card-img-top" src="https://via.placeholder.com/150" alt="Card image cap">
+  <div class="card-body">
+    <h5 class="card-title">{{ 'Server Status: ' + serverStatus }}</h5>
+    <p class="card-text">{{ 'Server : ' + title }} with id {{id}} is running on port {{ port}}.</p>
+    <a href="#" class="btn btn-primary">Go somewhere</a>
+  </div>
+</div>
